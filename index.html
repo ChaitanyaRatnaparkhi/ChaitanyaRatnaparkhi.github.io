@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaitanya Ratnaparkhi | Portfolio</title>
+
+  <!-- Dark mode init BEFORE rendering -->
+  <script>
+    if (
+      localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    html.dark body {
+      background-color: #1a202c;
+      color: #fff;
+    }
+    .dark .bg-white { background-color: #1a202c; }
+    .dark .text-gray-700 { color: #d1d5db; }
+    .dark .text-gray-600 { color: #d1d5db; }
+    .dark .bg-slate-50 { background-color: #2d3748; }
+    .dark .text-blue-600 { color: #60a5fa; }
+    .dark .text-gray-500 { color: #9ca3af; }
+    .dark .border-gray-200 { border-color: #4b5563; }
+
+    @media (max-width: 768px) {
+      #timeline .flex-row {
+        flex-direction: column !important;
+        text-align: left !important;
+      }
+      #timeline .text-right {
+        text-align: left !important;
+        padding-right: 0 !important;
+      }
+      #timeline .text-left {
+        padding-left: 0 !important;
+      }
+    }
+    #timeline h3 {
+      font-size: 1.5rem;
+    }
+    #timeline p {
+      font-size: 1.125rem;
+    }
+  </style>
+</head>
+<body class="transition-colors duration-500 ease-in-out bg-gradient-to-br from-slate-100 to-blue-50 font-sans text-gray-800 dark:from-gray-900 dark:to-gray-800 dark:text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-2xl font-extrabold text-blue-700 dark:text-white tracking-tight">Chaitanya</div>
+        <div class="space-x-6 flex items-center">
+          <a href="#about" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 font-medium">About</a>
+          <a href="#projects" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 font-medium">Projects</a>
+          <a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 font-medium">Contact</a>
+          <button id="darkToggle" class="text-xl" title="Toggle Dark Mode">🌙</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-16 px-4 bg-white dark:bg-gray-900 shadow-md" id="about" data-aos="fade-up">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+      <img src="/images/profile.jpg" alt="Profile"
+        class="w-48 h-48 rounded-xl shadow-lg border-4 border-white dark:border-gray-700 transition-transform hover:scale-105 duration-300 object-cover">
+      <div>
+        <h1 class="text-5xl font-extrabold text-blue-600 dark:text-blue-400 leading-tight">Chaitanya Ratnaparkhi</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mt-4">Software Engineer | AI Enthusiast</p>
+      </div>
+    </div>
+    <div class="mt-6">
+      <a href="/files/Chaitanya_Ratnaparkhi_Resume.pdf" download
+         class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-600 transition-all duration-300">
+        Download Resume
+      </a>
+    </div>
+  </header>
+
+<!-- Skills -->
+<section id="skills" class="max-w-6xl mx-auto mt-16 px-6 py-10 bg-white dark:bg-gray-800 rounded-xl shadow-md" data-aos="fade-up">
+  <h2 class="text-3xl font-extrabold tracking-tight leading-snug mb-8 text-center text-blue-800 dark:text-blue-300">
+    Skills & Technologies
+  </h2>
+
+  <!-- Skills Wrapper -->
+  <div id="skills-wrapper" class="overflow-hidden transition-all duration-500 ease-in-out max-h-[5.5rem] space-y-6">
+
+    <!-- Frontend -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2 flex items-center text-blue-600 dark:text-blue-400">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        Frontend
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center font-semibold text-sm sm:text-base text-gray-800 dark:text-gray-100">
+        <span class="bg-blue-100 dark:bg-blue-900 py-2 px-4 rounded-full shadow-sm">HTML/CSS</span>
+        <span class="bg-blue-100 dark:bg-blue-900 py-2 px-4 rounded-full shadow-sm">JavaScript</span>
+        <span class="bg-blue-100 dark:bg-blue-900 py-2 px-4 rounded-full shadow-sm">React</span>
+        <span class="bg-blue-100 dark:bg-blue-900 py-2 px-4 rounded-full shadow-sm">Tailwind CSS</span>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2 flex items-center text-green-600 dark:text-green-400">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"></path><path d="M12 12V4"></path></svg>
+        Backend
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center font-semibold text-sm sm:text-base text-gray-800 dark:text-gray-100">
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">Node.js</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">Express.js</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">MongoDB</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">PostgreSQL</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">REST APIs</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">Flask</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">Java</span>
+        <span class="bg-green-100 dark:bg-green-900 py-2 px-4 rounded-full shadow-sm">Python</span>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2 flex items-center text-purple-600 dark:text-purple-400">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4m0-6V5a2 2 0 012-2h4m6 0l6 6m-6 0L3 21"></path></svg>
+        Tools
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center font-semibold text-sm sm:text-base text-gray-800 dark:text-gray-100">
+        <span class="bg-purple-100 dark:bg-purple-900 py-2 px-4 rounded-full shadow-sm">Git/GitHub</span>
+        <span class="bg-purple-100 dark:bg-purple-900 py-2 px-4 rounded-full shadow-sm">Postman</span>
+        <span class="bg-purple-100 dark:bg-purple-900 py-2 px-4 rounded-full shadow-sm">Docker</span>
+        <span class="bg-purple-100 dark:bg-purple-900 py-2 px-4 rounded-full shadow-sm">Linux</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <div class="text-center mt-6">
+    <button id="toggleSkills" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">
+      Show More ↓
+    </button>
+  </div>
+</section>
+
+
+  <!-- Contact Form -->
+  <section id="contact" class="max-w-4xl mx-auto mt-16 px-6 py-10 bg-white dark:bg-gray-800 rounded-xl shadow-md" data-aos="zoom-in">
+  <h2 class="text-3xl font-bold mb-6 text-center text-blue-700 dark:text-blue-400">Contact Me</h2>
+  <div class="flex flex-col md:flex-row justify-around items-center text-gray-700 dark:text-gray-300 space-y-6 md:space-y-0">
+    <div class="flex items-center space-x-4">
+      <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v16h16V4H4zm8 8l8-5H4l8 5z" />
+      </svg>
+      <span>chaitanyaratnaparkhi366@gmail.com</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 5a2 2 0 012-2h2a1 1 0 011 1v3a1 1 0 01-1 1H5v9h2a1 1 0 011 1v3a1 1 0 01-1 1H5a2 2 0 01-2-2V5zm16 0a2 2 0 00-2-2h-2a1 1 0 00-1 1v3a1 1 0 001 1h2v9h-2a1 1 0 00-1 1v3a1 1 0 001 1h2a2 2 0 002-2V5z" />
+      </svg>
+      <span>201-275-7079</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 4a1 1 0 011-1h3.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0011.414 5H20a1 1 0 011 1v13a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2v11h14V7h-7.586a1 1 0 01-.707-.293l-1.414-1.414A1 1 0 006.586 5H6z" />
+      </svg>
+      <a href="https://www.linkedin.com/in/chaitanyar12" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-6xl mx-auto mt-16 px-6 py-10 bg-white dark:bg-gray-800 rounded-xl shadow-md" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700 dark:text-blue-400">Projects</h2>
+    <ul class="grid md:grid-cols-2 gap-8">
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Web Forum</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Created a full-stack web forum with API testing and user profiles.</p>
+          <p class="text-sm text-gray-500 mb-3">Node.js, MongoDB, Postman</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/web-forum" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Enrolleasy</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Smart student enrollment and dashboard analytics.</p>
+          <p class="text-sm text-gray-500 mb-3">React, Express, MongoDB</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/enrolleasy" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">AI Chatbot</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Built a chatbot using OpenAI&#39;s API and deployed it on Vercel.</p>
+          <p class="text-sm text-gray-500 mb-3">React, Node.js, OpenAI API</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/ai-chatbot" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">E-Commerce Backend</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Implemented shopping cart logic, payment gateway, and admin dashboards.</p>
+          <p class="text-sm text-gray-500 mb-3">Express.js, MongoDB, Stripe API</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/ecommerce-backend" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Portfolio Website</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">Responsive personal portfolio with dark mode and project filtering.</p>
+          <p class="text-sm text-gray-500 mb-3">Node.js, EJS, Tailwind CSS</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/ChaitanyaRatnaparkhi.github.io" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+        <li class="p-6 bg-slate-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Sentiment Analyzer</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">NLP-based tool to analyze tweets and generate sentiment scores.</p>
+          <p class="text-sm text-gray-500 mb-3">Python, NLTK, scikit-learn</p>
+          <a href="https://github.com/ChaitanyaRatnaparkhi/sentiment-analyzer" class="text-blue-500 hover:underline">View Project</a>
+        </li>
+      
+    </ul>
+  </section>
+
+
+<section id="timeline" class="py-24 px-4 max-w-7xl mx-auto">
+  <h2 class="text-4xl font-extrabold text-center text-blue-600 dark:text-blue-400 mb-20">
+    Experience & Education Timeline
+  </h2>
+
+  <div class="relative">
+    <!-- Timeline vertical line -->
+    <div class="absolute left-1/2 top-0 transform -translate-x-1/2 h-full w-1 bg-blue-500 dark:bg-blue-400 z-0"></div>
+
+    <!-- Item 1 (left) -->
+    <div class="mb-20 flex items-center w-full relative z-10">
+      <div class="w-1/2 pr-6 text-right">
+        <h3 class="text-2xl font-bold text-blue-600 dark:text-blue-300">Junior Software Analyst</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Innovatus Technology · Jan 2022 – Sep 2022</p>
+        <p class="mt-2 text-gray-700 dark:text-gray-300">
+          Worked on core Java modules and contributed to backend development and debugging.
+        </p>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-blue-600 dark:bg-blue-400 border-4 border-white dark:border-gray-900 shadow-md z-10"></div>
+      <div class="w-1/2"></div>
+    </div>
+
+    <!-- Item 2 (right) -->
+    <div class="mb-20 flex items-center w-full relative z-10">
+      <div class="w-1/2"></div>
+      <div class="w-8 h-8 rounded-full bg-indigo-600 dark:bg-indigo-400 border-4 border-white dark:border-gray-900 shadow-md z-10"></div>
+      <div class="w-1/2 pl-6 text-left">
+        <h3 class="text-2xl font-bold text-indigo-600 dark:text-indigo-300">M.S. in Computer Science</h3>
+        <p class="text-gray-700 dark:text-gray-300">Stevens Institute of Technology</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">2024 (Expected)</p>
+      </div>
+    </div>
+
+    <!-- Item 3 (left) -->
+    <div class="mb-8 flex items-center w-full relative z-10">
+      <div class="w-1/2 pr-6 text-right">
+        <h3 class="text-2xl font-bold text-indigo-600 dark:text-indigo-300">B.E. in Computer Engineering</h3>
+        <p class="text-gray-700 dark:text-gray-300">University of Pune</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">2021</p>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-indigo-600 dark:bg-indigo-400 border-4 border-white dark:border-gray-900 shadow-md z-10"></div>
+      <div class="w-1/2"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- Goals -->
+  <section class="max-w-4xl mx-auto mt-16 px-6 py-10 bg-white dark:bg-gray-800 rounded-xl shadow-md" id="goals" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700 dark:text-blue-400">What I'm Looking For</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      I'm seeking opportunities where I can work on impactful web or AI-driven solutions,
+      contribute to real-world systems, and grow with a passionate team. I’m especially interested
+      in roles that allow me to explore backend services, scalable infrastructure, and smart systems.
+    </p>
+  </section>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const htmlEl = document.documentElement;
+    const toggleBtn = document.getElementById('darkToggle');
+    const skillToggleBtn = document.getElementById("toggleSkills");
+    const skillsWrapper = document.getElementById("skills-wrapper");
+    let expanded = false;
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        toggleBtn.textContent = '☀️';
+      } else {
+        htmlEl.classList.remove('dark');
+        toggleBtn.textContent = '🌙';
+      }
+    }
+
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const newTheme = htmlEl.classList.contains('dark') ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+
+    if (skillToggleBtn && skillsWrapper) {
+      skillToggleBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        if (expanded) {
+          skillsWrapper.style.maxHeight = skillsWrapper.scrollHeight + "px";
+          skillToggleBtn.textContent = "Show Less ↑";
+        } else {
+          skillsWrapper.style.maxHeight = "5.5rem";
+          skillToggleBtn.textContent = "Show More ↓";
+        }
+      });
+
+      skillsWrapper.style.maxHeight = "5.5rem";
+    }
+  });
+</script>
+</body>
+</html>
